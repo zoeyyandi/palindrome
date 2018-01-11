@@ -2,29 +2,18 @@ const assert = require('chai').assert;
 const isPalindrome = require('../palindrome');
 
 describe('palindrome', () => {
-  let words1 = ['aabbaa', 'a', 'noon'];
-  let words2 = ['abac', 'zoey', 'palindrome'];
+  let arr1 = ['aabbaa', 'a', 'noon', 'a man a plan a canal panama'];
+  let arr2 = ['abac', 'zoey', 'palindrome', 'this is not a palindrome'];
 
-  words1.forEach(word => {
-    it(`should return true if ${word} is a palindrome`, () => {
-      let result = isPalindrome(word);
-      assert.isTrue(result);
+  arr1.forEach(item => {
+    it(`should return true if ${item} is a palindrome`, () => {
+      assert.isTrue(isPalindrome(item));
     });
   });
 
-  words2.forEach(word => {
-    it(`should return false if ${word} is NOT a palindrome`, () => {
-      assert.isFalse(isPalindrome(word));
+  arr2.forEach(item => {
+    it(`should return false if ${item} is NOT a palindrome`, () => {
+      assert.isFalse(isPalindrome(item));
     });
-  });
-
-  it('should return true if a phrase is a palindrome', () => {
-    let phrase = 'a man a plan a canal panama';
-    assert.isTrue(isPalindrome(phrase));
-  });
-
-  it('should return false if a phrase is NOT a palindrome', () => {
-    let phrase = 'this is not a palindrome';
-    assert.isFalse(isPalindrome(phrase));
   });
 });
