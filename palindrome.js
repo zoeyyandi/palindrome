@@ -1,11 +1,10 @@
 const isPalindrome = str => {
-  let originalStr = str.split(' ').join('');
+  let originalStr = str.replace(/\s/g, '');
   let newStr = str
     .replace(/\s/g, '')
     .split('')
     .reverse()
-    .join('')
-    .toLowerCase();
+    .join('');
   return originalStr === newStr;
 };
 
